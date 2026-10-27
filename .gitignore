@@ -6,3 +6,4 @@ runs/
 *.pt
 *.csv
 __pycache__/
+ball_dataset/
