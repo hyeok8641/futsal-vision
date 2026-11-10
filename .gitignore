@@ -7,3 +7,5 @@ runs/
 *.csv
 __pycache__/
 ball_dataset/
+court_repo/
+*.jpg
