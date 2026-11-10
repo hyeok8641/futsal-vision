@@ -61,7 +61,6 @@
 - 추적기가 놓친 3건 대응(재획득 기준, 찬 공 처리) 검토. 장면 맞춤 규칙은 피할 것.
 - 이번 주 새 경기 촬영: 박수로 동기화, 같은 해상도·fps·위치 권장. 위치가 바뀌면 코트 지도 새로 필요(추정). 원하면 한 번에 돌리는 run_all.ps1 제작.
 - 오늘 코드 git 커밋(render_dual.py, peek_frames.py, eval_labels.py, merge_raw.py, to_court.py, report/*.py). labels_47min.csv는 *.csv 무시 예외로 올릴지 결정.
-- 절전 설정: 전체 작업 때문에 AC 절전을 0(안 함)으로 둠. 원래 15분(powercfg /change standby-timeout-ac 15).
 - 노션 기록과 README 갱신(YOLO26, 현재 파이프라인).
 
 ## Claude에게 요청하는 방식
