@@ -1,4 +1,4 @@
-﻿import csv
+﻿import csv, sys
 from collections import defaultdict
 
 def load(p):
@@ -16,8 +16,8 @@ def iou(a, b):
     ua = (a[2] - a[0]) * (a[3] - a[1]) + (b[2] - b[0]) * (b[3] - b[1]) - inter
     return inter / ua if ua > 0 else 0
 
-a = load(r"C:\futsal\clip50_raw_r2.csv")     # 1280
-b = load(r"C:\futsal\clip50_raw_1920.csv")   # 1920
+a = load(sys.argv[1])     # 1280
+b = load(sys.argv[2])     # 1920
 ts = sorted(set(a) | set(b), key=float)
 
 has = lambda d, t: any(x[4] >= 0.25 for x in d.get(t, []))
@@ -35,7 +35,7 @@ for t in ts:
     merged[t] = kept
     nboxes += len(kept)
 
-with open(r"C:\futsal\clip50_raw_merged.csv", "w", newline="") as f:
+with open(sys.argv[3], "w", newline="") as f:
     w = csv.writer(f)
     w.writerow(["t", "x1", "y1", "x2", "y2", "conf"])
     for t in ts:
