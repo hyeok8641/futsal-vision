@@ -60,8 +60,13 @@
 - 호모그래피 팀원 요청 반영(보류 중): court_repo를 b87ff2e로 pull, CSV에서 x_m/y_m 빼기, frame·x1,y1,x2,y2 열 추가, cam1 30fps 명시, 21~3158초 전체 CSV, 사각지대 방향 불일치 확인(팀원은 cam1 x=-20 / cam2 x=+20이라고 함), 반대편 카메라가 사각지대를 못 메운 이유(공이 작아서인지) 답변.
 - 추적기가 놓친 3건 대응(재획득 기준, 찬 공 처리) 검토. 장면 맞춤 규칙은 피할 것.
 - 이번 주 새 경기 촬영: 박수로 동기화, 같은 해상도·fps·위치 권장. 위치가 바뀌면 코트 지도 새로 필요(추정). 원하면 한 번에 돌리는 run_all.ps1 제작.
-- 오늘 코드 git 커밋(render_dual.py, peek_frames.py, eval_labels.py, merge_raw.py, to_court.py, report/*.py). labels_47min.csv는 *.csv 무시 예외로 올릴지 결정.
-- 노션 기록과 README 갱신(YOLO26, 현재 파이프라인).
+- labels_47min.csv는 *.csv 무시 예외로 올릴지 결정.
+- 노션 기록 갱신.
+
+## 코드 정리와 전달 (2026-11-13)
+- 팀 저장소 futsal-analytics/futsal-analytics에 ball-tracking 브랜치로 파이프라인 6개 + README push (커밋 6a4efa1, 로컬 C:\futsal_team). detect_video2.py는 모델 경로를 6번째 인자로, to_court.py는 ../calibration 사용(court_map 옛/새 버전 모두 지원). 기존 src/futsal/ball/은 건드리지 않음. PR은 팀장님 확인 후.
+- 모델·학습 코드는 C:\drive_upload\ball_model(best.pt, training/, sam3_label/, README.txt, 팀장님께_전달사항.txt)로 모아 사용자가 구글 드라이브에 올림.
+- 개인 저장소에서 안 쓰는 코드 61개 삭제(diag_*, track_ball_v3~v5, 옛 버전, v2 모델 코드, 초기 실험). git 기록에는 남아 있어 필요하면 복구 가능. README 현재 파이프라인 기준으로 갱신.
 
 ## Claude에게 요청하는 방식
 - 항상 한국어로 답한다. 사용자는 비전공자이므로 용어를 쉽게 풀어 설명한다.
